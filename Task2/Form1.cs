@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Task2
 {
@@ -34,6 +36,13 @@ namespace Task2
 
         public void StartTheQuiz()
         {
+            // При старте сбрасываем цвета на White 
+            timeLabel.BackColor = Color.White;
+            sum.BackColor = Color.White;
+            difference.BackColor = Color.White;
+            product.BackColor = Color.White;
+            quotient.BackColor = Color.White;
+
             // Генерируем в переменные случайные числа 
             addend1 = randomizer.Next(51);
             addend2 = randomizer.Next(51);
@@ -73,6 +82,7 @@ namespace Task2
             timeLeft = 30;
             timeLabel.Text = "30 секунд";
             timer1.Start();
+            
         }
         //Проверяем правильность ответа 
         private bool CheckTheAnswer()
@@ -90,6 +100,10 @@ namespace Task2
         // Обратный отчет
         private void Timer1_Tick(object sender, EventArgs e)
         {
+            if (timeLeft <= 6)
+            {
+                timeLabel.BackColor = Color.Red;
+            }
             // Если в методе true, то таймер останавливается и выводит сообщение
             if (CheckTheAnswer())
             {
@@ -131,23 +145,55 @@ namespace Task2
 
         private void StartButton_Click(object sender, EventArgs e)
         {
+
             StartTheQuiz();
             startButton.Enabled = false;
+            
+            
         }
 
-        private void TimeLabel_Click(object sender, EventArgs e)
+        private void Sum_ValueChanged(object sender, EventArgs e)
         {
-            if (timeLeft < 11)
+            if (addend1 + addend2 == sum.Value)
             {
-                timeLabel.BackColor = Color.Red;
+                sum.BackColor = Color.Green;
+               
+            }
+        }
+
+        private void Difference_ValueChanged(object sender, EventArgs e)
+        {
+            if (minuend - subtrahend == difference.Value)
+            {
+                difference.BackColor = Color.Green;
+                
+            }
+        }
+
+        private void Product_ValueChanged(object sender, EventArgs e)
+        {
+            if (multiplicand * multiplier == product.Value)
+            {
+                product.BackColor = Color.Green;
+            }
+        }
+
+        private void Quotient_ValueChanged(object sender, EventArgs e)
+        {
+            if (dividend / divisor == quotient.Value)
+            {
+                quotient.BackColor = Color.Green;
             }
         }
 
         public Form1()
         {
             InitializeComponent();
+            
+
         }
 
 
     }
+    
 }

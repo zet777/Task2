@@ -1,4 +1,6 @@
-﻿namespace Task2
+﻿using System.Drawing;
+
+namespace Task2
 {
     partial class Form1
     {
@@ -61,14 +63,13 @@
             // 
             // timeLabel
             // 
-            this.timeLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.timeLabel.BackColor = System.Drawing.Color.White;
             this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeLabel.Location = new System.Drawing.Point(324, 15);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(100, 30);
             this.timeLabel.TabIndex = 0;
-            this.timeLabel.Click += new System.EventHandler(this.TimeLabel_Click);
             // 
             // label1
             // 
@@ -124,22 +125,24 @@
             // 
             // sum
             // 
-            this.sum.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.sum.BackColor = System.Drawing.Color.White;
             this.sum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sum.Location = new System.Drawing.Point(324, 75);
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(100, 35);
             this.sum.TabIndex = 2;
+            this.sum.ValueChanged += new System.EventHandler(this.Sum_ValueChanged);
             this.sum.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // difference
             // 
-            this.difference.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.difference.BackColor = System.Drawing.Color.White;
             this.difference.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.difference.Location = new System.Drawing.Point(324, 125);
             this.difference.Name = "difference";
             this.difference.Size = new System.Drawing.Size(100, 35);
             this.difference.TabIndex = 3;
+            this.difference.ValueChanged += new System.EventHandler(this.Difference_ValueChanged);
             this.difference.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label2
@@ -186,12 +189,13 @@
             // 
             // product
             // 
-            this.product.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.product.BackColor = System.Drawing.Color.White;
             this.product.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.product.Location = new System.Drawing.Point(324, 175);
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(100, 35);
             this.product.TabIndex = 4;
+            this.product.ValueChanged += new System.EventHandler(this.Product_ValueChanged);
             this.product.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label8
@@ -238,12 +242,13 @@
             // 
             // quotient
             // 
-            this.quotient.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.quotient.BackColor = System.Drawing.Color.White;
             this.quotient.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.quotient.Location = new System.Drawing.Point(324, 225);
             this.quotient.Name = "quotient";
             this.quotient.Size = new System.Drawing.Size(100, 35);
             this.quotient.TabIndex = 5;
+            this.quotient.ValueChanged += new System.EventHandler(this.Quotient_ValueChanged);
             this.quotient.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label12
